@@ -1,0 +1,29 @@
+
+
+<div id="tree" class="tree">
+<form>
+<p> Amount:<input  type="number" #cur placeholder="Enter the amount"></p>
+<label>From</label>
+<select #c1 name="" id="country1" (mouseleave)="changebase(c1.value)">
+<option value="INR">Indian Rupee</option>
+<option value="USD"> US Dollar</option>
+<option value="GBP">British Pound</option>
+<option value="EUR">Euro</option>
+<option value="JPY">Japanese Yen</option>
+</select>
+<br><br>
+<label>To</label>
+<select #c2 name=" " id="country1" (mouseleave)="tocountry(c2.value)">
+<option value="INR">Indian Rupee</option>
+<option value="USD"> US Dollar</option>
+<option value="GBP">British Pound</option>
+<option value="EUR">Euro</option>
+<option value="JPY">Japanese Yen</option>
+</select>
+<br><br>
+<button (click)="convert(cur.value)">Convert</button>
+<p class="result">{{cur.value}}{{base}}</p>
+<p class="result">=</p>
+<p class="result">{{result}} {{cont2}}</p>
+</form>
+</div>
