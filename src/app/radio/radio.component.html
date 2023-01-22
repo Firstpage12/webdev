@@ -1,0 +1,11 @@
+<app-table [files]="files"></app-table>
+<form>
+    <p>How do you want to sort</p>
+<input type="radio" id="name"  value="name" name="sort" checked="checked">
+<label for="name">Name</label><br>
+<input type="radio" id="bday" value="bday" name="sort">
+<label for="bday">Birthday</label><br>
+
+</form>
+
+<button (click)="first()">Sort</button>
