@@ -1,25 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import React, { useState } from 'react';
+
+
+const App = () => {
+  const [users, setUsers] = useState([]);
+
+
+  const getData = async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data = await res.json();
+    setUsers(data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Data</h1>
+      <button onClick={getData}>Button</button>
+      <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Userid</th>
+            <th>id</th>
+            <th>title</th>
+            <th>body</th>
+          </tr>   
+        </thead>   
+        <tbody>
+          {
+          users.map( (pdata,key) =>
+          <tr key={key}>
+              <td className='table-data'>{pdata.userId }</td>
+              <td className='table-data'>{pdata.id }</td>
+              <td className='table-data'>{pdata.title }</td>
+              <td className='table-data'>{pdata.body }</td>
+              
+          </tr>
+          )
+        }
+        </tbody>
+      </table>
+       
+      </div>
     </div>
   );
-}
+};
 
 export default App;
