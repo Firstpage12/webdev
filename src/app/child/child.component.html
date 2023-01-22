@@ -1,0 +1,20 @@
+<h2>Display data in table</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>UserId</th>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let store of stores">
+    <td>{{store.userId}}</td>
+    <td>{{store.id}}</td>
+    <td>{{store.title}}</td>
+    <td>{{store.body}}</td>
+    </tr>
+  </tbody>
+</table>
+  
