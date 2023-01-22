@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <style>
+      .circleBase {
+        border-radius: 50%;
+      }
+      .c3 {
+        width: 100px;
+        height: 100px;
+        position:absolute;
+        top:55px;
+        left:55px;
+        border: 1px solid #000;
+      }
+      .c2 {
+        width: 150px;
+        height: 150px;
+        left:32px;
+        top:32px;
+        position:absolute;
+        border: 1px solid #000;
+      }
+      .c1{
+        width: 200px;
+        height:200px;
+        border: 1px solid black;
+        position:relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div onclick="circle1(this)" class="circleBase c1"></div>
+    <div onclick="circle2(this)" class="circleBase c2" ></div>
+    <div onclick="circle3(this)" class="circleBase c3" ></div>
+    
+    <script>
+        function circle1(element){
+            alert("c1");
+            
+        }
+        function circle2(element){
+            alert("c2");
+
+        }
+        function circle3(element){
+            alert("c3");
+        }
+    </script>
+  </body>
+
+</html>
