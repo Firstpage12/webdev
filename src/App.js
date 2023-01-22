@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react';
+import Filter from './radio';
+import Table from './table';
+
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      
+    };
+    this.sort = this.sort.bind(this);
+  }
+
+  sort(filter) {
+    if (filter === "name") {
+      this.setState({ sortedBy: "name" });
+    } else {
+      this.setState({ sortedBy: "bday" });
+    }
+  }
+
+  render() {
+    return (
+      <div className="container-fluid">
+        
+        
+        <Table sortedBy={this.state.sortedBy}></Table>
+        <br></br>
+        <p>how do you want to sort???</p>
+        <Filter sorter={this.sort} sortedBy={this.state.sortedBy}></Filter>
+      </div>
+    );
+  }
 }
 
 export default App;
